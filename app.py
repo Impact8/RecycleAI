@@ -1,5 +1,6 @@
 import streamlit as st
 import utils
+from model import build_model, get_device
 
 st.title("♻️ RecycleAI")
 st.write("Upload a picture of trash and we'll tell you how to dispose of it!")
@@ -11,6 +12,10 @@ if img_file is not None:
             st.write("Image loaded Successfully!")
     except Exception:
         st.write("Image did not loaded successfully.")
+    
+device = get_device()
+model = build_model
+model.to(device)
     
 
 
