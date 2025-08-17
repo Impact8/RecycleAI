@@ -5,7 +5,7 @@ import torchvision.transforms as transforms
 
 def load_image_for_user(file):
     img = Image.open(file)
-    rgb_img = img.convert("RGBA")
+    rgb_img = img.convert("RGB")
     return rgb_img
 
 def load_image_for_model(file):
@@ -22,7 +22,7 @@ def load_image_for_model(file):
     ])
     img_tensor = transform(img_resized)
     img_tensor = img_tensor.unsqueeze(0)
-    
+
     return img_tensor
 
 
